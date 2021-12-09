@@ -6,7 +6,7 @@ import { BILL_REQUESTED } from '../Constants/constant';
 async function apiBill(checkout) {
 	const { data } = await axios({
 		method: 'POST',
-		url: `http://127.0.0.1:8000/api/pay`,
+		url: `${process.env.REACT_APP_API_URL}/pay`,
 		data: checkout,
 		headers: {
 			Accept: 'application/json',

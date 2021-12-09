@@ -8,12 +8,10 @@ import {
 } from '../Action/productAction';
 import { CTPRODUCT_REQUESTED, PRODUCT_REQUESTED } from '../Constants/constant';
 
-
-
 async function apiProduct() {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/product`
+		url: `${process.env.REACT_APP_API_URL}/product`
 	});
 	return data;
 }
@@ -35,7 +33,7 @@ export function* dsProductWatcher() {
 async function apictProduct(id) {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/product/${id}`
+		url: `${process.env.REACT_APP_API_URL}/product/${id}`
 	});
 	return data;
 }

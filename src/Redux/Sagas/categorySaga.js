@@ -6,7 +6,7 @@ import { call, put, takeLatest } from '@redux-saga/core/effects';
 async function api_Category() {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/category`
+		url: `${process.env.REACT_APP_API_URL}/category`
 	});
 	return data;
 }

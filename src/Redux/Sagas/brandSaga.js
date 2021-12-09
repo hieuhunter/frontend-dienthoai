@@ -1,12 +1,12 @@
-import axios from "axios";
-import { brand_FailedAction, brand_SucceedAction } from "../Action/brandAction";
-import { BRAND_REQUESTED } from "../Constants/constant";
+import axios from 'axios';
+import { brand_FailedAction, brand_SucceedAction } from '../Action/brandAction';
+import { BRAND_REQUESTED } from '../Constants/constant';
 import { call, put, takeLatest } from '@redux-saga/core/effects';
 
 async function apiBrand() {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/brand`
+		url: `${process.env.REACT_APP_API_URL}/brand`
 	});
 	return data;
 }

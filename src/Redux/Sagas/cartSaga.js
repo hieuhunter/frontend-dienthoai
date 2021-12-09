@@ -10,12 +10,17 @@ import {
 	deletecart_SucceedAction
 } from '../Action/cartAction';
 import { call, put, takeLatest } from '@redux-saga/core/effects';
-import { ADDCART_REQUESTED, CART_REQUESTED, DELETEALLCART_REQUESTED, DELETECART_REQUESTED } from '../Constants/constant';
+import {
+	ADDCART_REQUESTED,
+	CART_REQUESTED,
+	DELETEALLCART_REQUESTED,
+	DELETECART_REQUESTED
+} from '../Constants/constant';
 
 async function apiaddCart(gio_hang) {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/addCart`,
+		url: `${process.env.REACT_APP_API_URL}/addCart`,
 		params: gio_hang,
 		headers: {
 			Accept: 'application/json',
@@ -45,7 +50,7 @@ export function* addCart_Watcher() {
 async function apiCart() {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/listCart`,
+		url: `${process.env.REACT_APP_API_URL}/listCart`,
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
@@ -74,7 +79,7 @@ export function* Cart_Watcher() {
 async function apiDeleteCart(gio_hang) {
 	const { data } = await axios({
 		method: 'DELETE',
-		url: `http://127.0.0.1:8000/api/delete_cart`,
+		url: `${process.env.REACT_APP_API_URL}/delete_cart`,
 		params: gio_hang,
 		headers: {
 			Accept: 'application/json',
@@ -104,7 +109,7 @@ export function* xoaCart_Watcher() {
 async function api_deleteallCart(gio_hang) {
 	const { data } = await axios({
 		method: 'DELETE',
-		url: `http://127.0.0.1:8000/api/delete_all`,
+		url: `${process.env.REACT_APP_API_URL}/delete_all`,
 		params: gio_hang,
 		headers: {
 			Accept: 'application/json',

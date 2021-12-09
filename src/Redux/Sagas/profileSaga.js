@@ -11,7 +11,7 @@ import { PERSONAL_REQUESTED, UPDATE_REQUESTED } from '../Constants/constant';
 async function apiPersonal(user) {
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://127.0.0.1:8000/api/profile`,
+		url: `${process.env.REACT_APP_API_URL}/profile`,
 		data: user,
 		headers: {
 			Accept: 'application/json',
@@ -40,7 +40,7 @@ export function* Personal_Watcher() {
 async function apiUpdate(user) {
 	const { data } = await axios({
 		method: 'PUT',
-		url: `http://127.0.0.1:8000/api/profile`,
+		url: `${process.env.REACT_APP_API_URL}/profile`,
 		data: user,
 		headers: {
 			Accept: 'application/json',
