@@ -39,7 +39,7 @@ const Layout = ({ children, isHome = false }) => {
 								<div className='header-left'>
 									<div className='logo'>
 										<h1>
-											<a  href='/' target='_self'>
+											<a href='/' target='_self'>
 												<img src='/images/logoxt-01-01_1.png' width={172} alt='' className='png' />
 											</a>{' '}
 										</h1>
@@ -47,14 +47,14 @@ const Layout = ({ children, isHome = false }) => {
 									<div className='callcenter'>
 										<i />
 										<span>
-											<a href='#!'>1800.1999</a>
+											<a href='#!'>1800.19999</a>
 											<strong>Tổng đài miễn phí</strong>
 										</span>
 									</div>
 								</div>
 								<div className='header-search'>
 									<div className='box_search'>
-										<form id='formSearch' name='formSearch' method='post'  autoComplete='off'>
+										<form id='formSearch' name='formSearch' method='post' autoComplete='off'>
 											<input name='do_search' defaultValue={1} type='hidden' />
 											<input
 												name='keyword'
