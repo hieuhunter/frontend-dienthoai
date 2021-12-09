@@ -1,0 +1,95 @@
+ul.dropdown {
+	position: relative;
+	z-index: 100;
+}
+
+ul.dropdown li.hover,
+ul.dropdown li:hover {
+	z-index: 200;
+	cursor: default;
+}
+
+ul.dropdown > li > ul {
+	visibility: hidden;
+	position: absolute !important;
+	top: 58px;
+	left: 0;
+	z-index: 150;
+	width: 100%;
+	padding: 20px 10px;
+	background: #fff;
+	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.33);
+	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.33);
+	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.33);
+}
+
+ul.dropdown ul li {
+	float: left;
+	clear: none !important;
+	height: auto;
+	overflow: hidden;
+	border-top: none;
+	border-bottom: none;
+	text-align: left;
+}
+
+ul.dropdown ul .sub_menu {
+	width: 100%;
+}
+
+ul.dropdown ul li ul li {
+	margin-bottom: 20px;
+}
+
+ul.dropdown li ul li ul {
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+ul.dropdown ul ul {
+	position: relative !important;
+	float: none;
+	clear: both;
+	left: 0px;
+	top: -1px;
+	background: none;
+	overflow: hidden;
+	width: 100%;
+}
+
+ul.dropdown li:hover ul {
+	visibility: visible;
+}
+
+
+/* For vertical menu */
+
+ul.dropdown-vertical li {
+	float: none;
+}
+
+ul.dropdown li ul li > a {
+	line-height: 18px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+ul.dropdown li.hover ul li a {
+	background: none;
+	top: 0px;
+	line-height: 18px;
+}
+ul.dropdown li ul li li a {
+	color: #000000;
+	border-bottom: 3px solid #fff;
+	text-transform: none;
+	display: inline-block;
+}
+ul.dropdown li ul li li a:hover {
+	border-bottom: 3px solid #ff4500;
+}
+ul.dropdown ul ul a {
+	background: none;
+	font-weight: normal;
+}

@@ -1,0 +1,175 @@
+.menutop {
+	position: relative;
+}
+.menutop .menu-button {
+	white-space: nowrap;
+	font-size: 13px;
+	font-weight: bold;
+	display: block;
+	background: #ff0100;
+	color: #fff;
+	height: 34px;
+	line-height: 34px;
+	width: 100%;
+	position: relative;
+	padding: 0 35px 0 45px;
+}
+.menutop .menu-button i {
+	background-position: -106px -18px;
+	width: 18px;
+	height: 17px;
+	position: absolute;
+	top: 8px;
+	left: 10px;
+}
+.menutop .box-submenu {
+	background: #fff;
+	position: absolute;
+	padding: 7px 0;
+	width: 100%;
+	left: 0;
+	z-index: 9;
+	display: none;
+}
+.menutop .box-submenu .dropdown {
+	padding: 0 5px;
+}
+.menutop .box-submenu .dropdown li {
+	margin-bottom: 5px;
+}
+.menutop .box-submenu .dropdown li a {
+	position: relative;
+	display: block;
+	padding: 6px 9px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.menutop .box-submenu .dropdown li a:hover {
+	background: #ff0100;
+	color: #fff;
+}
+.menutop .box-submenu .dropdown li .icon {
+	position: absolute;
+}
+.menutop .box-submenu .dropdown li span {
+	padding-left: 25px;
+	font-size: 14px;
+}
+.menutop b {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	background: url(/images/left-arrow.svg);
+	display: block;
+	width: 10px;
+	height: 10px;
+	right: 10px;
+	top: 12px;
+}
+.box-submenu .icon {
+	display: block;
+	background: no-repeat center center;
+}
+
+#menu_1 .icon {
+	width: 16px;
+	height: 18px;
+	background-image: url(/images/mn_phone.svg);
+	top: 8px;
+}
+#menu_1:hover .icon {
+	background-image: url(/images/mn_phone.svg);
+}
+#menu_155 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/mn_apple.svg);
+	top: 8px;
+}
+#menu_155:hover .icon {
+	background-image: url(/images/mn_apple.svg);
+}
+
+#menu_242 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/mn_tablet.svg);
+	top: 8px;
+}
+#menu_242:hover .icon {
+	background-image: url(/images/mn_tablet.svg);
+}
+
+#menu_4 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/mn_headphone.svg);
+	top: 8px;
+}
+#menu_4:hover .icon {
+	background-image: url(/images/mn_headphone.svg);
+}
+
+#menu_6 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/watch.svg);
+	top: 8px;
+}
+#menu_6:hover .icon {
+	background-image: url(/images/watch.svg);
+}
+
+#menu_42 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/news.svg);
+	top: 8px;
+}
+#menu_42:hover .icon {
+	background-image: url(/images/news.svg);
+}
+
+#menu_99 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/shopping-bag.svg);
+	top: 8px;
+}
+#menu_99:hover .icon {
+	background-image: url(/images/shopping-bag.svg);
+}
+
+#menu_245 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/notebook-computer.svg);
+	top: 9px;
+}
+#menu_245:hover .icon {
+	background-image: url(/images/notebook-computer.svg);
+}
+
+#menu_246 .icon {
+	width: 16px;
+	height: 17px;
+	background-image: url(/images/wallet.svg);
+	top: 9px;
+}
+#menu_246:hover .icon {
+	background-image: url(/images/wallet.svg);
+}
+
+@media screen and (min-width: 768px) {
+	.menutop .box-submenu {
+		height: 360px;
+	}
+}
+
+.showMenu {
+	display: block !important;
+}
+
+.menutop-hover:hover .box-submenu {
+	display: block !important;
+}

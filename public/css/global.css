@@ -1,0 +1,245 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+td,
+th {
+	line-height: 18px;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+form,
+input,
+textarea,
+section {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100% !important;
+	font-weight: normal !important;
+}
+label {
+	font-weight: normal !important;
+}
+.clear {
+	clear: both;
+	font-size: 0px;
+	line-height: 0px;
+	height: 0;
+}
+p {
+	margin: 0px;
+	padding-bottom: 5px;
+}
+ol,
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333333 !important;
+	-webkit-transition: color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	-ms-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+}
+a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+
+img {
+	border: 0px;
+	max-width: 100%;
+	height: auto !important;
+}
+input {
+	color: #2a2a2a;
+}
+.input-warn {
+	border: 1px solid #ff0000;
+	line-height: 20px;
+	height: 18px;
+}
+.input-ok {
+	border: 1px solid #00cc66;
+	line-height: 20px;
+	height: 18px;
+}
+
+/* OPTIONAL BUTTON STYLES for applying custom look and feel: */
+.textfiled {
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #2a2a2a;
+	line-height: 25px !important;
+	height: 25px;
+	font-size: 12px !important;
+}
+.textarea {
+	border: 1px solid #b7b7b7;
+	background: #fff;
+	color: #2a2a2a;
+	line-height: 20px;
+	overflow: auto;
+}
+.select {
+	border: 1px solid #b7b7b7;
+	color: #2a2a2a;
+	padding: 5px 3px;
+	font-size: 12px;
+}
+
+.clearfix:after {
+	content: '[DO NOT LEAVE IT IS NOT REAL]';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline;
+	position: relative;
+}
+/*\*/
+.clearfix {
+	display: block;
+}
+
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.hidden {
+	display: none;
+}
+.relative {
+	position: relative;
+}
+
+/* -------------------------------------------------------------------
+format text
+------------------------------------------------------------------- */
+
+.font_err {
+	color: #ff0000;
+}
+.font_err a:active,
+.font_err a:link,
+.font_err a:visited {
+	text-decoration: none;
+	color: #ff0000;
+}
+.font_err a:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+
+/********************* CSS for box_redirect ****************************/
+#box_redirect {
+	border: 1px solid #505050;
+	width: 70%;
+	margin: 0px auto;
+}
+#box_redirect p {
+	line-height: 18px;
+}
+#box_redirect .top {
+	background: #f78600;
+	border-bottom: 1px solid #5c5c5c;
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	height: 22px;
+	padding: 2px;
+	text-align: left;
+}
+#box_redirect .fontMess {
+	color: #65d700;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 10px;
+}
+#box_redirect .mess {
+	background: #383838;
+	color: #ffffff;
+	text-align: center;
+}
+#box_redirect .bottom {
+	background: #fff3dd;
+	color: #000;
+	text-align: center;
+	padding: 5px;
+	font-size: 12px;
+}
+
+/********************* CSS for boxMess ****************************/
+#boxMess {
+	border: 1px solid #f08200;
+	padding: 2px 5px;
+	background: #fcf5cd;
+}
+#boxMess .font_err {
+	color: #950000;
+}
+
+/******************** PHAN TRANG **************/
+.pagination {
+	display: block;
+	text-align: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+.pagination .pagetotal {
+	background-color: #868686;
+	color: #ffffff;
+	padding: 2px 3px;
+}
+.pagination a,
+
+
+.pagination a:hover,
+.pagination a:active {
+	color: #3866bb;
+	text-decoration: none;
+}
+
+
+.pagination .btnPage {
+	color: #868686;
+	text-align: center;
+	font-weight: bold;
+}
+.pagination a:visited.btnPage {
+	color: #868686;
+	font-weight: bold;
+}
