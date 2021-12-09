@@ -47,7 +47,7 @@ const Layout = ({ children, isHome = false }) => {
 									<div className='callcenter'>
 										<i />
 										<span>
-											<a href='#!'>1800.19999</a>
+											<a href='#!'>1800.1999</a>
 											<strong>Tổng đài miễn phí</strong>
 										</span>
 									</div>
