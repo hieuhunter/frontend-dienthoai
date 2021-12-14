@@ -1,26 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { ctproduct_RequestedAction, slproduct_RequestedAction } from '../../Redux/Action/productAction';
+import { Link } from 'react-router-dom';
+import { slproduct_RequestedAction } from '../../Redux/Action/productAction';
 
 import Layout from '../Layout';
 import Productnew from '../Product/product_new';
 
 const Home = () => {
 	const dispatch = useDispatch();
-	const ct_Product = useSelector((state) => state.san_pham.ct_product);
 	const SLProduct = useSelector((state) => state.san_pham.sl_product);
-	let { id } = useParams();
+
 	const formatter = new Intl.NumberFormat('vi', {
 		style: 'currency',
 		currency: 'VND'
 	});
-	console.log(ct_Product);
 	console.log(SLProduct);
 	useEffect(() => {
-		dispatch(ctproduct_RequestedAction(id));
 		dispatch(slproduct_RequestedAction());
-	}, [dispatch, id]);
+	}, [dispatch]);
 	return (
 		<>
 			<Layout isHome>
@@ -222,7 +219,7 @@ const Home = () => {
 												<div className='owl-stage-outer'>
 													<div className='owl-stage' style={{ width: '1428px' }}>
 														{SLProduct.san_pham.map((sp) => (
-															<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
+															<div className='owl-item' style={{ width: '228px', marginRight: '10px' }} key={sp.id}>
 																<div className='item product-grid'>
 																	<div className='boxItem'>
 																		<div className='div_images'>
@@ -240,13 +237,13 @@ const Home = () => {
 																		</div>
 																		<div className='ct_info info'>
 																			<h3>
-																				<a href='#!'>{sp.ten_sp}</a>
+																				<Link to={`/Detail/${sp.id}`}>{sp.ten_sp}</Link>
 																			</h3>
 																			<div className='div_price'>
 																				<p className='price'>{formatter.format(sp.gia)}</p>
 																			</div>
 																			<p className='nt-prepaid-installment'>
-																				Trả trước <strong>7.497.000 đ</strong>
+																				Trả trước <strong>5.497.000 đ</strong>
 																			</p>
 																		</div>
 																	</div>
