@@ -29,6 +29,31 @@
 		flex: 1 100%;
 	}
 }
+@media screen and (min-width: 360px) {
+	.header-top .header-left {
+		width: 30%;
+	}
+	.header-top .header-search {
+		width: 36.75%;
+	}
+	.header-top .header-right {
+		width: 33%;
+	}
+	.header-nav .menutop {
+		width: 17.08%;
+		height: 30px;
+	}
+	.header-nav .header-links {
+		width: 82%;
+		margin-left: auto;
+	}
+	.header-nav .container {
+		display: flex;
+		-webkit-display: flex;
+		flex-flow: row nowrap;
+		flex: 1 100%;
+	}
+}
 
 @media screen and (max-width: 1025px) {
 	.logo-mobile {
