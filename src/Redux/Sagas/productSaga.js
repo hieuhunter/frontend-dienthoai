@@ -4,9 +4,11 @@ import {
 	ctproduct_FailedAction,
 	ctproduct_SucceedAction,
 	product_FailedAction,
-	product_SucceedAction
+	product_SucceedAction,
+	slproduct_FailedAction,
+	slproduct_SucceedAction
 } from '../Action/productAction';
-import { CTPRODUCT_REQUESTED, PRODUCT_REQUESTED } from '../Constants/constant';
+import { CTPRODUCT_REQUESTED, PRODUCT_REQUESTED, SLPRODUCT_REQUESTED } from '../Constants/constant';
 
 async function apiProduct() {
 	const { data } = await axios({
@@ -28,6 +30,28 @@ function* dsProduct() {
 }
 export function* dsProductWatcher() {
 	yield takeLatest(PRODUCT_REQUESTED, dsProduct);
+}
+// carousel product
+async function apiSLProduct() {
+	const { data } = await axios({
+		method: 'GET',
+		url: `${process.env.REACT_APP_API_URL}/slproduct`
+	});
+	return data;
+}
+function* SLProduct() {
+	try {
+		const res = yield call(apiSLProduct);
+		console.log(res);
+		if (res.success) {
+			yield put(slproduct_SucceedAction(res.data));
+		}
+	} catch (err) {
+		yield put(slproduct_FailedAction(err.message));
+	}
+}
+export function* dsSLProductWatcher() {
+	yield takeLatest(SLPRODUCT_REQUESTED, SLProduct);
 }
 // ct_product
 async function apictProduct(id) {

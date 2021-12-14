@@ -5,6 +5,9 @@ import {
     PRODUCT_FAILED,
     PRODUCT_REQUESTED,
     PRODUCT_SUCCEED,
+    SLPRODUCT_FAILED,
+    SLPRODUCT_REQUESTED,
+    SLPRODUCT_SUCCEED,
   } from "../Constants/constant";
   
   export const product_RequestedAction = () => ({
@@ -40,5 +43,21 @@ import {
     payload: {
       error: error,
     },  
+  });
+  //carousel product
+  export const slproduct_RequestedAction = () => ({
+    type: SLPRODUCT_REQUESTED,
+  });
+  export const slproduct_SucceedAction = (san_pham) => ({
+    type: SLPRODUCT_SUCCEED,
+    payload: {
+      san_pham: san_pham,
+    },
+  });
+  export const slproduct_FailedAction = (errors) => ({
+    type: SLPRODUCT_FAILED,
+    payload: {
+      errors: errors,
+    },
   });
   
