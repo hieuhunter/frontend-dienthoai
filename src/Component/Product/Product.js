@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { category_RequestedAction } from '../../Redux/Action/categoryAction';
+import { slproduct_RequestedAction } from '../../Redux/Action/productAction';
 import { sp_categoryRequestedAction } from '../../Redux/Action/sp_categoryAction';
 import Layout from '../Layout';
 const Product = () => {
 	const dispatch = useDispatch();
 	const sp_category = useSelector((state) => state.ds_category.sp_category.san_pham);
+	const SLProduct = useSelector((state) => state.san_pham.sl_product);
 	let { id } = useParams();
 	const formatter = new Intl.NumberFormat('vi', {
 		style: 'currency',
@@ -17,6 +19,7 @@ const Product = () => {
 	useEffect(() => {
 		dispatch(sp_categoryRequestedAction(id));
 		dispatch(category_RequestedAction());
+		dispatch(slproduct_RequestedAction());
 	}, [dispatch, id]);
 	return (
 		<Layout>
@@ -40,12 +43,7 @@ const Product = () => {
 																<div className='owl-stage' style={{ width: '1627px' }}>
 																	<div className='owl-item' style={{ width: '386.667px', marginRight: '20px' }}>
 																		<div className='item'>
-																			<a
-																				
-																				href='#!'
-																				target='_blank'
-																				
-																			>
+																			<a href='#!' target='_blank'>
 																				{' '}
 																				<img src='images/-sale-1111-min.jpg' width={771} alt='' className='png' />
 																			</a>
@@ -53,12 +51,7 @@ const Product = () => {
 																	</div>
 																	<div className='owl-item' style={{ width: '386.667px', marginRight: '20px' }}>
 																		<div className='item'>
-																			<a
-																			
-																				href='#!'
-																				target='_blank'
-																				
-																			>
+																			<a href='#!' target='_blank'>
 																				{' '}
 																				<img src='images/19zfold3-11-10.png' width={771} alt='' className='png' />
 																			</a>
@@ -66,12 +59,7 @@ const Product = () => {
 																	</div>
 																	<div className='owl-item' style={{ width: '386.667px', marginRight: '20px' }}>
 																		<div className='item'>
-																			<a
-																				
-																				href='#!'
-																				target='_blank'
-																				
-																			>
+																			<a href='#!' target='_blank'>
 																				{' '}
 																				<img src='images/po.jpg' width={771} alt='' className='png' />
 																			</a>
@@ -79,12 +67,7 @@ const Product = () => {
 																	</div>
 																	<div className='owl-item' style={{ width: '386.667px', marginRight: '20px' }}>
 																		<div className='item'>
-																			<a
-																				
-																				href='#!'
-																				target='_blank'
-																				
-																			>
+																			<a href='#!' target='_blank'>
 																				{' '}
 																				<img src='images/1-7aw-se-12-5-min.jpg' width={771} alt='' className='png' />
 																			</a>
@@ -199,199 +182,42 @@ const Product = () => {
 															<div className='owl-product-flash-sell  owl-carousel '>
 																<div className='owl-stage-outer'>
 																	<div className='owl-stage' style={{ width: '1428px' }}>
-																		<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
-																			<div className='item product-grid'>
-																				<div className='boxItem'>
-																					<div className='div_images'>
-																						<a href='#!'>
-																							<img
-																								src='images/sanpham/(600x600)_crop_iphone-13-128gb-xtmobile.jpg'
-																								alt=''
-																								title='iPhone 13 128GB Chính hãng (VN/A)'
-																							/>
-																						</a>
-																					</div>
-																					<div className='ct_info info'>
-																						<h3>
-																							<a href='#!'>iPhone 13 128GB Chính hãng (VN/A)</a>
-																						</h3>
-																						<div className='div_price'>
-																							<p className='price'>24.990.000 đ</p>
+																		{SLProduct.san_pham.map((sp) => (
+																			<div
+																				className='owl-item'
+																				style={{ width: '228px', marginRight: '10px' }}
+																				key={sp.id}
+																			>
+																				<div className='item product-grid'>
+																					<div className='boxItem'>
+																						<div className='div_images'>
+																						<Link to={`/Detail/${sp.id}`}>
+																								<img
+																									src={`${sp.image_url}`}
+																									alt='iPhone 12 64GB (Cũ 99%)'
+																									title='iPhone 12 64GB (Cũ 99%)'
+																								/>
+																							</Link>
+																							<div className='group-flag-top'>
+																								<span className='flag flag-installment'>Trả góp 0%</span>
+																								<span className='flag-discount'>-16%</span>
+																							</div>
 																						</div>
-																						<p className='nt-prepaid-installment'>
-																							Trả trước <strong>7.497.000 đ</strong>
-																						</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
-																			<div className='item product-grid'>
-																				<div className='boxItem'>
-																					<div className='div_images'>
-																						<a href='#!'>
-																							<img
-																								src='images/sanpham/(600x600)_crop_iphone-13-pro-max-128gb-xtmobile.jpg'
-																								alt='iPhone 13 Pro Max 128GB Chính hãng (VN/A)'
-																								title='iPhone 13 Pro Max 128GB Chính hãng (VN/A)'
-																							/>
-																						</a>
-																					</div>
-																					<div className='ct_info info'>
-																						<h3>
-																							<a href='#!'>iPhone 13 Pro Max 128GB Chính hãng (VN/A)</a>
-																						</h3>
-																						<div className='div_price'>
-																							<p className='price'>34.990.000 đ</p>
-																						</div>
-																						<p className='nt-prepaid-installment'>
-																							Trả trước <strong>10.497.000 đ</strong>
-																						</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
-																			<div className='item product-grid'>
-																				<div className='boxItem'>
-																					<div className='div_images'>
-																						<a href='#!'>
-																							<img
-																								src='images/sanpham/(600x600)_crop_iphone_11_64gb_mau_do_xtmobile.jpg'
-																								alt='iPhone 11 64GB (Cũ 99%)'
-																								title='iPhone 11 64GB (Cũ 99%)'
-																							/>
-																						</a>
-																						<div className='group-flag-top'>
-																							<span className='flag-discount'>-40%</span>
-																						</div>
-																					</div>
-																					<div className='ct_info info'>
-																						<h3>
-																							<a href='#!'>iPhone 11 64GB (Cũ 99%)</a>
-																						</h3>
-																						<div className='div_price'>
-																							<p className='price'>
-																								12.590.000 đ
-																								<span>
-																									14.990.000 đ<span className='mobile-discount'> -16%</span>
-																								</span>
+																						<div className='ct_info info'>
+																							<h3>
+																								<a href='#!'>{sp.ten_sp}</a>
+																							</h3>
+																							<div className='div_price'>
+																								<p className='price'>{formatter.format(sp.gia)}</p>
+																							</div>
+																							<p className='nt-prepaid-installment'>
+																								Trả trước <strong>5.497.000 đ</strong>
 																							</p>
 																						</div>
-																						<p className='nt-prepaid-installment'>
-																							Trả trước <strong>3.777.000 đ</strong>
-																						</p>
 																					</div>
 																				</div>
 																			</div>
-																		</div>
-																		<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
-																			<div className='item product-grid'>
-																				<div className='boxItem'>
-																					<div className='div_images'>
-																						<a href='#!'>
-																							<img
-																								src='images/sanpham/(600x600)_crop_600_note_10_plus_anh_cuc_quang_1.jpg'
-																								alt='Galaxy Note 10 Plus 5G (12GB|256GB) Hàn Quốc SM-N976N (Cũ 99%)'
-																								title='Galaxy Note 10 Plus 5G (12GB|256GB) Hàn Quốc SM-N976N (Cũ 99%)'
-																							/>
-																						</a>
-																						<div className='group-flag-top'>
-																							<span className='flag-discount'>-30%</span>
-																						</div>
-																						<span className='flag-middle flag-online-1302' />
-																					</div>
-																					<div className='ct_info info'>
-																						<h3>
-																							<a href='#!'>
-																								Galaxy Note 10 Plus 5G (12GB|256GB) Hàn Quốc SM-N976N (Cũ 99%)
-																							</a>
-																						</h3>
-																						<div className='div_price'>
-																							<p className='price'>
-																								9.590.000 đ
-																								<span>
-																									10.990.000 đ<span className='mobile-discount'> -12%</span>
-																								</span>
-																							</p>
-																						</div>
-																						<p className='nt-prepaid-installment'>
-																							Trả trước <strong>2.877.000 đ</strong>
-																						</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
-																			<div className='item product-grid'>
-																				<div className='boxItem'>
-																					<div className='div_images'>
-																						<a href='#!'>
-																							<img
-																								src='images/sanpham/(600x600)_crop_s10-5g_white_900x900-min.jpg'
-																								alt='Galaxy S10 5G (8GB|256GB) Hàn Quốc SM-G977N (Cũ 99%)'
-																								title='Galaxy S10 5G (8GB|256GB) Hàn Quốc SM-G977N (Cũ 99%)'
-																							/>
-																						</a>
-																						<div className='group-flag-top'>
-																							<span className='flag-discount'>-35%</span>
-																						</div>
-																						<span className='flag-middle flag-online-1304' />
-																					</div>
-																					<div className='ct_info info'>
-																						<h3>
-																							<a href='#!'>Galaxy S10 5G (8GB|256GB) Hàn Quốc SM-G977N (Cũ 99%)</a>
-																						</h3>
-																						<div className='div_price'>
-																							<p className='price'>
-																								6.990.000 đ
-																								<span>
-																									7.990.000 đ<span className='mobile-discount'> -12%</span>
-																								</span>
-																							</p>
-																						</div>
-																						<p className='nt-prepaid-installment'>
-																							Trả trước <strong>2.097.000 đ</strong>
-																						</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div className='owl-item' style={{ width: '228px', marginRight: '10px' }}>
-																			<div className='item product-grid'>
-																				<div className='boxItem'>
-																					<div className='div_images'>
-																						<a href='#!'>
-																							<img
-																								src='images/sanpham/(600x600)_crop_fdf717a8665f9e01c74e_1.jpg'
-																								alt='Galaxy S20 5G (12GB|128GB) Hàn Quốc (Cũ 99%)'
-																								title='Galaxy S20 5G (12GB|128GB) Hàn Quốc (Cũ 99%)'
-																							/>
-																						</a>
-																						<div className='group-flag-top'>
-																							<span className='flag-discount'>-30%</span>
-																						</div>
-																						<span className='flag-middle flag-online-1301' />
-																					</div>
-																					<div className='ct_info info'>
-																						<h3>
-																							<a href='#!'>Galaxy S20 5G (12GB|128GB) Hàn Quốc (Cũ 99%)</a>
-																						</h3>
-																						<div className='div_price'>
-																							<p className='price'>
-																								11.190.000 đ
-																								<span>
-																									12.990.000 đ<span className='mobile-discount'> -13%</span>
-																								</span>
-																							</p>
-																						</div>
-																						<p className='nt-prepaid-installment'>
-																							Trả trước <strong>3.357.000 đ</strong>
-																						</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
+																		))}
 																	</div>
 																</div>
 															</div>
