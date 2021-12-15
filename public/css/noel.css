@@ -1,0 +1,98 @@
+
+#main-body #xtm-content,
+#main-body .news-promotion,
+#xtm-container .section-news-latest {
+	background: transparent;
+}
+.header-nav {
+	background: none;
+}
+.box-flash-sell .title_box {
+	background: #ae0402;
+	text-align: center;
+}
+.group-slide-featured .box-body-flashsale {
+	background: #ae0402;
+}
+.box-flash-sell-accessories .title_box {
+	background: #8ea373;
+	text-align: center;
+}
+.box-flash-sell-accessories .box-body-flashsale {
+	background: #8ea373;
+}   
+.box-flash-sell .title_box .title_product,
+.box-flash-sell-accessories .title_box .title_product {
+	text-align: center;
+}
+@media screen and (min-width: 1024px) {
+	body {
+		overflow-x: hidden;
+	}
+	header {
+		position: relative;
+		z-index: 9;
+	}
+	#main-body::before {
+		background: url(/images/noel-hoa.png) no-repeat;
+		content: '';
+		top: 120px;
+		display: block;
+		width: 1789px;
+		height: 265px;
+		position: absolute;
+		left: 50%;
+		margin-left: -894px;
+	}
+	.box-main-body {
+		background: url(/images/footer.png) bottom center no-repeat;
+	}
+	.box-flashsale-ip12::before,
+	.box-flashsale-ip12::after {
+		content: '';
+		display: block;
+		position: absolute;
+		background: url(/images/noel-cent.png) no-repeat;
+		width: 130px;
+		height: 450px;
+		top: 50%;
+		margin-top: -225px;
+	}
+	.box-flashsale-ip12 {
+		position: relative;
+	}
+	.box-flashsale-ip12::before {
+		background-position: top left;
+		left: -130px;
+	}
+	.box-flashsale-ip12::after {
+		background-position: top right;
+		right: -130px;
+	}
+	.box-flash-sell .title_box,
+	.box-flash-sell-accessories .title_box {
+		position: relative;
+	}
+	.box-flash-sell .title_box:before,
+	.box-flash-sell-accessories .title_box:before {
+		background: url(/images/featured-top-left.png) no-repeat;
+		width: 295px;
+		height: 48px;
+		position: absolute;
+		bottom: 1px;
+		left: 10px;
+		content: '';
+	}
+	.box-flash-sell .title_box:after,
+	.box-flash-sell-accessories .title_box:after {
+		background: url(/images/featured-top-right.png) no-repeat;
+		width: 325px;
+		height: 61px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		content: '';
+		visibility: visible;
+	}
+}
+
