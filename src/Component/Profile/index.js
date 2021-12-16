@@ -1,4 +1,4 @@
-import {  useFormik } from 'formik';
+import { useFormik } from 'formik';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
@@ -115,7 +115,7 @@ const Profile = () => {
 											</svg>
 											Github
 										</h6>
-										<span className='text-secondary'>bootdey</span>
+										<span className='text-secondary'>hieuhunter</span>
 									</li>
 									<li className='list-group-item d-flex justify-content-between align-items-center flex-wrap'>
 										<h6 className='mb-0'>
@@ -135,7 +135,7 @@ const Profile = () => {
 											</svg>
 											Twitter
 										</h6>
-										<span className='text-secondary'>@bootdey</span>
+										<span className='text-secondary'>@hieuhunter</span>
 									</li>
 									<li className='list-group-item d-flex justify-content-between align-items-center flex-wrap'>
 										<h6 className='mb-0'>
@@ -157,7 +157,7 @@ const Profile = () => {
 											</svg>
 											Instagram
 										</h6>
-										<span className='text-secondary'>bootdey</span>
+										<span className='text-secondary'>hieuhunter</span>
 									</li>
 									<li className='list-group-item d-flex justify-content-between align-items-center flex-wrap'>
 										<h6 className='mb-0'>
@@ -177,7 +177,7 @@ const Profile = () => {
 											</svg>
 											Facebook
 										</h6>
-										<span className='text-secondary'>bootdey</span>
+										<span className='text-secondary'>hieuhunter</span>
 									</li>
 								</ul>
 							</div>

@@ -130,10 +130,10 @@ const Cart = () => {
 																			defaultValue={myValue}
 																			className='form-select form-select-sm'
 																		>
-																			<option >Chọn màu</option>
+																			<option>Chọn màu</option>
 																			<option>Màu trắng</option>
 																			<option>Màu đen</option>
-																			<option >Màu xanh dương</option>
+																			<option>Màu xanh dương</option>
 																		</select>
 																		<div className='choose-qty'>
 																			<div className='minus' onClick={addToCart.bind(this, sp.product.id, -1)}>
@@ -169,7 +169,7 @@ const Cart = () => {
 																className={classNames('form-control', {
 																	'is-invalid': props.touched.ho_ten && props.errors.ho_ten
 																})}
-																placeholder='Ho Va Ten*'
+																placeholder='Họ và tên *'
 																id='ho_ten'
 																name='ho_ten'
 																onChange={props.handleChange}
@@ -188,7 +188,7 @@ const Cart = () => {
 																		className={classNames('form-control', {
 																			'is-invalid': props.touched.email && props.errors.email
 																		})}
-																		placeholder='Email* '
+																		placeholder='Email * '
 																		id='email'
 																		name='email'
 																		onChange={props.handleChange}
@@ -207,7 +207,7 @@ const Cart = () => {
 																		className={classNames('form-control', {
 																			'is-invalid': props.touched.sdt && props.errors.sdt
 																		})}
-																		placeholder='Mobile Phone * '
+																		placeholder='Số điện thoại * '
 																		id='sdt'
 																		name='sdt'
 																		onChange={props.handleChange}
@@ -270,7 +270,7 @@ const Cart = () => {
 																className='form-control'
 																style={{ width: '100%' }}
 																placeholder='Yêu cầu khác'
-																defaultValue={'abc'}
+															
 															/>
 														</div>
 
