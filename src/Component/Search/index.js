@@ -11,7 +11,6 @@ const Search = () => {
 		style: 'currency',
 		currency: 'VND'
 	});
-
 	const [searchParams] = useSearchParams();
 
 	useEffect(() => {
@@ -32,7 +31,7 @@ const Search = () => {
 				</div>
 				<div className='boxProduct'>
 					<div className='total_pro'>
-						<a href='#!'>(225) Máy mới</a>
+						<a href='#!'>({ds_search.total}) Sản phẩm được tìm thấy</a>
 					</div>
 					<div className='title_s'>
 						<h3>Sản phẩm</h3>
