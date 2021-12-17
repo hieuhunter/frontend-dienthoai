@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { checkloginAction, logout_RequestedAction } from '../../Redux/Action/authAction';
 import { brand_RequestedAction } from '../../Redux/Action/brandAction';
 import { category_RequestedAction } from '../../Redux/Action/categoryAction';
@@ -12,11 +12,32 @@ const Total = function (arr, prop) {
 };
 const Layout = ({ children, isHome = false }) => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const dsCategory = useSelector((state) => state.danh_muc.ds_category);
 	const dsBrand = useSelector((state) => state.thuong_hieu.ds_brand);
 	const login = useSelector((state) => state.auth.login);
 	const dsCart = useSelector((state) => state.gio_hang.gio_hang);
 
+	const [searchParams] = useSearchParams();
+	const [search, setSearch] = useState(searchParams.get('q') || '');
+
+	const onSearchSubmit = (e) => {
+		e.preventDefault();
+		try {
+			navigate(`/search?q=${search}`);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	const handleChangeSearch = (event) => {
+		let q = event.target.value;
+		console.log(q);
+		if (q) {
+			setSearch(q);
+		} else {
+			setSearch('');
+		}
+	};
 	console.log(dsBrand);
 
 	useEffect(() => {
@@ -30,6 +51,16 @@ const Layout = ({ children, isHome = false }) => {
 	};
 	return (
 		<>
+			<div className='header-bn-top' style={{ background: '#ff3c12' }}>
+				<div className='header-bn-normal'>
+					<a className='abc'href='/' target='_blank'>
+						<img src='images/header-43lvv.png' alt='' />
+					</a>
+				</div>
+
+				<style dangerouslySetInnerHTML={{ __html: '.header-mobile-textlinks{background:#f99817;color:#c20000}' }} />
+			</div>
+
 			<div className='mf-overlay' />
 			<header className='header'>
 				<div className='div_menu'>
@@ -54,19 +85,16 @@ const Layout = ({ children, isHome = false }) => {
 								</div>
 								<div className='header-search'>
 									<div className='box_search'>
-										<form id='formSearch' name='formSearch' method='post' autoComplete='off'>
-											<input name='do_search' defaultValue={1} type='hidden' />
+										<form id='formSearch' name='formSearch' onSubmit={onSearchSubmit}>
 											<input
 												name='keyword'
 												id='search-keyword'
 												type='text'
-												required
 												className='text_search'
 												placeholder='Bạn muốn tìm gì ?'
-												defaultValue={''}
-												autoComplete='off'
+												onChange={handleChangeSearch}
+												value={search}
 											/>
-											<input type='hidden' id='fpc_id' name='fpc_id' />
 											<button id='do_submit' name='do_submit' type='submit' className='btn_search' value='Tìm kiếm' />
 										</form>
 										<div id='SuggestSearch' />

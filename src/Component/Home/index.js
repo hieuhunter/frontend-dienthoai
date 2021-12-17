@@ -240,7 +240,13 @@ const Home = () => {
 																				<Link to={`/Detail/${sp.id}`}>{sp.ten_sp}</Link>
 																			</h3>
 																			<div className='div_price'>
-																				<p className='price'>{formatter.format(sp.gia)}</p>
+																				<p className='price'>
+																					{formatter.format(sp.gia)}
+																					<span>
+																						{formatter.format(sp.gia_goc)}
+																						<span className='mobile-discount'> -16%</span>
+																					</span>
+																				</p>
 																			</div>
 																			<p className='nt-prepaid-installment'>
 																				Trả trước <strong>5.497.000 đ</strong>

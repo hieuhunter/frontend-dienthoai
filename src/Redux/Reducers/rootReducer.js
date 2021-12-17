@@ -7,6 +7,7 @@ import cartReducer from './cartReducer';
 import category_Reducer from './categoryReducer';
 import productReducer from './productReducer';
 import personal_Reducer from './profileReducer';
+import searchReducer from './searchReducer';
 import sp_brandReducer from './sp_brandRducer';
 import sp_categoryReducer from './sp_categoryReducer';
 
@@ -19,7 +20,7 @@ const rootReducer = combineReducers({
 	auth: authReducer,
 	gio_hang: cartReducer,
 	hoa_don: billReducer,
-	thong_tin: personal_Reducer
-	
+	thong_tin: personal_Reducer,
+	search: searchReducer
 });
 export default rootReducer;

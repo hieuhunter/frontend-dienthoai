@@ -553,3 +553,10 @@ strong {
 .padding-right-20 {
 	padding-right: 20px;
 }
+.header-bn-top img {
+    display: block;
+    margin: auto;
+}
+.header-bn-top {
+    text-align: center;
+}

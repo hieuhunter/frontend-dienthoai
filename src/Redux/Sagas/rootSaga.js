@@ -7,6 +7,7 @@ import { addCart_Watcher, Cart_Watcher, deleteallCart_Watcher, xoaCart_Watcher }
 import { ds_CategoryWatcher } from './categorySaga';
 import { ct_ProductWatcher, dsProductWatcher, dsSLProductWatcher } from './productSaga';
 import { Personal_Watcher, Updatett_Watcher } from './profileSaga';
+import { Search_Watcher } from './searchSaga';
 import { sp_BrandWatcher } from './sp_brandSaga';
 import { sp_CategoryWatcher } from './sp_categorySaga';
 
@@ -29,7 +30,8 @@ function* rootSaga() {
 		Bill_Watcher(),
 		Personal_Watcher(),
 		Updatett_Watcher(),
-		dsSLProductWatcher()
+		dsSLProductWatcher(),
+		Search_Watcher()
 	]);
 }
 export default rootSaga;

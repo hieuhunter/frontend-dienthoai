@@ -191,7 +191,7 @@ const Product = () => {
 																				<div className='item product-grid'>
 																					<div className='boxItem'>
 																						<div className='div_images'>
-																						<Link to={`/Detail/${sp.id}`}>
+																							<Link to={`/Detail/${sp.id}`}>
 																								<img
 																									src={`${sp.image_url}`}
 																									alt='iPhone 12 64GB (Cũ 99%)'
@@ -208,7 +208,13 @@ const Product = () => {
 																								<a href='#!'>{sp.ten_sp}</a>
 																							</h3>
 																							<div className='div_price'>
-																								<p className='price'>{formatter.format(sp.gia)}</p>
+																								<p className='price'>
+																									{formatter.format(sp.gia)}
+																									<span>
+																										{formatter.format(sp.gia_goc)}
+																										<span className='mobile-discount'> -16%</span>
+																									</span>
+																								</p>
 																							</div>
 																							<p className='nt-prepaid-installment'>
 																								Trả trước <strong>5.497.000 đ</strong>

@@ -219,6 +219,13 @@ format text
 	padding-top: 10px;
 	padding-right: 10px;
 }
+.paginationn {
+	padding-left: 930px !important;
+	display: block;
+	text-align: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
 .pagination .pagetotal {
 	background-color: #868686;
 	color: #ffffff;
@@ -242,4 +249,81 @@ format text
 .pagination a:visited.btnPage {
 	color: #868686;
 	font-weight: bold;
+}
+/* search*/
+body {
+	background: #fff;
+}
+.navation {
+	padding-top: 0;
+}
+.title_search {
+	text-transform: uppercase;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+.title_search span {
+	font-weight: bold;
+	color: #ff3300;
+}
+.total_pro {
+	margin-bottom: 20px;
+}
+.total_pro a {
+	display: inline-block;
+	color: #3366cc;
+	background: #f5f5f5;
+	padding: 5px 15px;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+.title_s {
+	font-size: 24px;
+	font-weight: bold;
+	color: #ff4500;
+	background: url("/images/icon_title_search.png") left no-repeat;
+	padding-left: 45px;
+}
+.title_s h3 {
+	border-bottom: 1px dotted #ccc;
+	padding-bottom: 5px;
+}
+.list_product_base .product-base-grid {
+	width: 19%;
+}
+
+@media (max-width: 767px){
+	#vnt-content {
+		padding: 10px;
+	}
+	.list_product_base .product-base-grid {
+		width: 49%;
+		margin:0 1% 1% 0;
+	}
+}
+.pagination .pagecur {
+    font-weight: bold;
+    display: inline-block;
+    padding: 0px 2px;
+    background: url(/images/page_on.gif) center no-repeat;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.pagination a, .pagination a:visited {
+    padding: 0px 2px;
+    display: inline-block;
+    text-decoration: none;
+    color: #868686;
+    font-weight: bold;
+    background: url(/images/page_bg.gif) center no-repeat;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
 }
