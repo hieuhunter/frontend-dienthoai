@@ -232,14 +232,11 @@ format text
 	padding: 2px 3px;
 }
 .pagination a,
-
-
 .pagination a:hover,
 .pagination a:active {
 	color: #3866bb;
 	text-decoration: none;
 }
-
 
 .pagination .btnPage {
 	color: #868686;
@@ -284,7 +281,7 @@ body {
 	font-size: 24px;
 	font-weight: bold;
 	color: #ff4500;
-	background: url("/images/icon_title_search.png") left no-repeat;
+	background: url('/images/icon_title_search.png') left no-repeat;
 	padding-left: 45px;
 }
 .title_s h3 {
@@ -295,35 +292,41 @@ body {
 	width: 19%;
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
 	#vnt-content {
 		padding: 10px;
 	}
 	.list_product_base .product-base-grid {
 		width: 49%;
-		margin:0 1% 1% 0;
+		margin: 0 1% 1% 0;
 	}
 }
 .pagination .pagecur {
-    font-weight: bold;
-    display: inline-block;
-    padding: 0px 2px;
-    background: url(/images/page_on.gif) center no-repeat;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
+	margin-left: 3px;
+	font-weight: bold;
+	display: inline-block;
+	padding: 0px 2px;
+	background: url(/images/page_on.gif) center no-repeat;
+	color: #fff;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
 }
-.pagination a, .pagination a:visited {
-    padding: 0px 2px;
-    display: inline-block;
-    text-decoration: none;
-    color: #868686;
-    font-weight: bold;
-    background: url(/images/page_bg.gif) center no-repeat;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
+.pagination a,
+.pagination a:visited,
+.pagination button,
+.pagination button:visited {
+	margin-left: 3px;
+	padding: 0px 2px;
+	display: inline-block;
+	text-decoration: none;
+	color: #868686;
+	font-weight: bold;
+	background: url(/images/page_bg.gif) center no-repeat;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: none;
 }

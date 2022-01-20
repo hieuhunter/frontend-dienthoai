@@ -1,21 +1,28 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useSearchParams } from 'react-router-dom';
-import { search_RequestedAction } from '../../Redux/Action/searchAcction';
+import { search_ChangeCurrentPageAction, search_RequestedAction } from '../../Redux/Action/searchAcction';
 import Layout from '../Layout';
+import Pagination from '../Pagination';
 
 const Search = () => {
 	const dispatch = useDispatch();
+
 	const ds_search = useSelector((state) => state.search.search);
+	/* 	const pageNumbers = getPageNumbers({ currentPage, limit, total }); */
 	const formatter = new Intl.NumberFormat('vi', {
 		style: 'currency',
 		currency: 'VND'
 	});
 	const [searchParams] = useSearchParams();
 
+	const onChangePage = (page) => {
+		dispatch(search_ChangeCurrentPageAction(page));
+	};
+
 	useEffect(() => {
-		dispatch(search_RequestedAction(searchParams.get('q') || ''));
-	}, [dispatch, searchParams]);
+		dispatch(search_RequestedAction(searchParams.get('q') || '', ds_search.currentPage));
+	}, [dispatch, ds_search.currentPage, searchParams]);
 
 	return (
 		<Layout>
@@ -70,40 +77,12 @@ const Search = () => {
 								</div>
 							))}
 						</div>
-						<div className='pagination paginationn'>
-							&nbsp;<span className='pagecur'>1</span>&nbsp;
-							<a href='#!' className='pagelink'>
-								2
-							</a>
-							&nbsp;
-							<a href='#!' className='pagelink'>
-								3
-							</a>
-							&nbsp;
-							<a href='#!' className='pagelink'>
-								4
-							</a>
-							&nbsp;
-							<a href='#!' className='pagelink'>
-								5
-							</a>
-							&nbsp;
-							<a href='#!' className='pagelink'>
-								6
-							</a>
-							&nbsp;
-							<a href='#!' className='pagelink'>
-								7
-							</a>
-							&nbsp;
-							<a href='#!' className='btnPage'>
-								<b>›</b>
-							</a>
-							&nbsp;
-							<a href='#!' className='btnPage'>
-								<b>»</b>
-							</a>
-						</div>
+						<Pagination
+							total={ds_search.total}
+							limit={10}
+							currentPage={ds_search.currentPage}
+							onChangePage={onChangePage}
+						/>
 					</div>
 				</div>
 			</main>

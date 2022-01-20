@@ -10,6 +10,7 @@ import Product from './Component/Product/Product';
 import ProductTH from './Component/Product/index_th';
 import Profile from './Component/Profile';
 import Search from './Component/Search';
+import Test from './Component/test';
 
 const Routers = () => {
 	return (
@@ -22,6 +23,7 @@ const Routers = () => {
 				<Route path='/Register' element={<Register />} />
 				<Route path='/Profile' element={<Profile />} />
 				<Route path='/Search' element={<Search />} />
+				<Route path='/Test' element={<Test />} />
 				<Route path='/Product/:id' element={<Product />} />
 				<Route path='/ProductTH/:id' element={<ProductTH />} />
 			</Routes>

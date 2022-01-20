@@ -1,16 +1,31 @@
-import { SEARCH_FAILED, SEARCH_REQUESTED, SEARCH_SUCCEED, TOTAL_RESETED } from '../Constants/constant';
+import {
+	SEARCH_CURRENT_PAGE_REQUESTED,
+	SEARCH_FAILED,
+	SEARCH_REQUESTED,
+	SEARCH_SUCCEED,
+	TOTAL_RESETED
+} from '../Constants/constant';
 
-export const search_RequestedAction = (search) => ({
-	type: SEARCH_REQUESTED,
+export const search_ChangeCurrentPageAction = (currentPage) => ({
+	type: SEARCH_CURRENT_PAGE_REQUESTED,
 	payload: {
-		search: search
+		currentPage: currentPage
 	}
 });
-export const search_SucceedAction = (search, total) => ({
+
+export const search_RequestedAction = (search, currentPage) => ({
+	type: SEARCH_REQUESTED,
+	payload: {
+		search: search,
+		currentPage: currentPage
+	}
+});
+export const search_SucceedAction = (search, total, currentPage) => ({
 	type: SEARCH_SUCCEED,
 	payload: {
 		search: search,
-		total: total
+		total: total,
+		currentPage: currentPage
 	}
 });
 export const search_FailedAction = (errors) => ({
